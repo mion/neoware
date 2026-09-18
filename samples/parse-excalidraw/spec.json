@@ -1,0 +1,17 @@
+{
+  "entities": [
+    "Alpha",
+    "Bravo",
+    "Charlie",
+    "Delta"
+  ],
+  "relationships": {
+    "Alpha": [
+      "Bravo",
+      "Charlie"
+    ],
+    "Charlie": [
+      "Delta"
+    ]
+  }
+}

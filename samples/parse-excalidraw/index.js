@@ -1,5 +1,6 @@
 import _ from "lodash";
-import { readFileSync, writeFileSync } from "node:fs";
+import FileSystem from "node:fs";
+import Path from "node:path";
 
 class Schema {
     constructor(entities, relationships) {
@@ -63,10 +64,13 @@ class Schema {
 }
 
 function main(pathToJsonFile) {
-    const json = readFileSync(pathToJsonFile, "utf-8");
+    const read = path => FileSystem.readFileSync(path, "utf-8");
+    const write = (path, data) => FileSystem.writeFileSync(path, data, "utf-8");
+    const { root, dir, base, name, ext } = Path.parse(pathToJsonFile);
+    const json = read(pathToJsonFile);
     const schema = Schema.parse(json);
-    writeFileSync("foo.ts", schema.toTypeScript(), "utf-8");
-    console.log(Schema.stringify(schema));
+    write(name + ".ts", schema.toTypeScript());
+    write(name + ".json", Schema.stringify(schema));
 }
 
 main(...Array.from(process.argv).slice(2));
