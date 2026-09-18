@@ -1,0 +1,20 @@
+{
+  "name": "neoware",
+  "version": "0.0.0",
+  "description": "Experiments with AI around the art and science of software engineering.",
+  "homepage": "https://github.com/mion/neoware#readme",
+  "bugs": {
+    "url": "https://github.com/mion/neoware/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mion/neoware.git"
+  },
+  "license": "MIT",
+  "author": "https://github.com/mion",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
