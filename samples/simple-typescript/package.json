@@ -1,0 +1,17 @@
+{
+  "name": "simple-typescript",
+  "version": "1.0.0",
+  "description": "TypeScript boilerplate.",
+  "license": "ISC",
+  "author": "github.com/mion",
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "start": "tsx main.ts",
+    "test": "tsx src/test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "tsx": "^4.23.13"
+  }
+}
