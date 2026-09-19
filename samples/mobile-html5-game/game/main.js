@@ -1,19 +1,17 @@
 function setup() {
-  const renderer = createCanvas(window.innerWidth, window.innerHeight);
-    // const renderer = createCanvas(windowWidth, windowHeight);
-  const canvas = renderer.elt;
+  const c = createCanvas(window.innerWidth, window.innerHeight);
+  
+  c.elt.addEventListener(
+    "gesturestart",
+    e => e.preventDefault(),
+    { passive: false }
+  );
 
-  canvas.style.touchAction = "none";
-
-  const preventGesture = e => e.preventDefault();
-
-  canvas.addEventListener("gesturestart", preventGesture, {
-    passive: false
-  });
-
-  canvas.addEventListener("gesturechange", preventGesture, {
-    passive: false
-  });
+  c.elt.addEventListener(
+    "gesturechange",
+    e => e.preventDefault(),
+    { passive: false }
+  );
 }
 
 function draw() {
